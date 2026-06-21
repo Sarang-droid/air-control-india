@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Air Control India — HVAC & Refrigeration Systems for Offshore, Marine & Industrial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#0a192f",
+            "surface-container-lowest": "#0c0f0f",
+            "on-surface": "#e2e2e2",
+            "on-secondary": "#002e6b",
+            "secondary-container": "#508eff",
+            surface: "#121414",
+            "surface-container-low": "#1a1c1c",
+            outline: "#8f9097",
+            "surface-container-high": "#282a2b",
+            "on-surface-variant": "#c5c6cd",
+            "outline-variant": "#44474d",
+            error: "#ffb4ab",
+            "on-primary": "#233148",
+            "surface-container": "#1e2020",
+            primary: "#b9c7e4",
+            secondary: "#aec6ff",
+            background: "#121414",
+            "on-background": "#e2e2e2",
+            "surface-variant": "#333535",
+            "surface-container-highest": "#333535",
+            "surface-bright": "#37393a",
+            "surface-dim": "#121414",
+            "surface-tint": "#b9c7e4",
+            tertiary: "#bcc7dd",
+            "on-tertiary": "#263142",
+            "tertiary-container": "#0e192a",
+            "on-primary-container": "#74829d",
+            "inverse-surface": "#e2e2e2",
+            "inverse-on-surface": "#2f3131",
+            "inverse-primary": "#515f78",
+            "error-container": "#93000a",
+            "on-error": "#690005",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed": "#d8e2ff",
+            "secondary-fixed-dim": "#aec6ff",
+            "primary-fixed": "#d6e3ff",
+            "primary-fixed-dim": "#b9c7e4",
+            "tertiary-fixed": "#d8e3fa",
+            "tertiary-fixed-dim": "#bcc7dd",
+            "on-secondary-container": "#00275e",
+            "on-primary-fixed": "#0d1c32",
+            "on-primary-fixed-variant": "#39475f",
+            "on-secondary-fixed": "#001a43",
+            "on-secondary-fixed-variant": "#004397",
+            "on-tertiary-container": "#778297",
+            "on-tertiary-fixed": "#111c2c",
+            "on-tertiary-fixed-variant": "#3c475a",
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem",
+          },
+          spacing: {
+            "container-max": "1440px",
+            "margin-mobile": "20px",
+            "margin-desktop": "80px",
+            gutter: "32px",
+            "section-gap": "160px",
+            unit: "8px",
+          },
+          fontFamily: {
+            headline: ["Geist", "sans-serif"],
+            display: ["Geist", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["JetBrains Mono", "monospace"],
+          },
+          fontSize: {
+            "display-xl": ["72px", { lineHeight: "80px", letterSpacing: "-0.04em", fontWeight: "700" }],
+            "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-md": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "500" }],
+            "stats-number": ["56px", { lineHeight: "1", letterSpacing: "-0.03em", fontWeight: "700" }],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+
+    /* Glassmorphic nav */
+    .nav-glass {
+      background: rgba(18, 20, 20, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Active nav link */
+    .nav-link-active {
+      color: #aec6ff;
+      border-bottom: 2px solid #508eff;
+    }
+
+    /* Hero gradient overlay */
+    .hero-gradient {
+      background: linear-gradient(135deg, #0a192f 0%, #121414 40%, rgba(18,20,20,0.92) 70%, #0a192f 100%);
+    }
+    .hero-mesh {
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% 60%, rgba(80,142,255,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 30%, rgba(185,199,228,0.08) 0%, transparent 60%),
+        radial-gradient(circle at 50% 100%, rgba(80,142,255,0.06) 0%, transparent 50%);
+    }
+
+    /* Floating badge animation */
+    @keyframes badge-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(80,142,255,0.3); }
+      50% { box-shadow: 0 0 0 8px rgba(80,142,255,0); }
+    }
+    .badge-animate { animation: badge-pulse 3s ease-in-out infinite; }
+
+    /* Grid pattern for engineering section */
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(80,142,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(80,142,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Cursor spotlight glow effect */
+    .glow-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .glow-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: radial-gradient(
+        400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+        rgba(80, 142, 255, 0.25),
+        transparent 50%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .glow-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+        rgba(80, 142, 255, 0.04),
+        transparent 40%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Mesh glow rotate animation */
+    @keyframes rotate-mesh {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.1); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+    .hero-mesh-glow {
+      position: absolute;
+      top: 10%;
+      left: 20%;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(80,142,255,0.1) 0%, transparent 65%);
+      filter: blur(100px);
+      animation: rotate-mesh 25s infinite linear;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Industry card hover */
+    .industry-card { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease; }
+    .industry-card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(0,0,0,0.4); }
+    .industry-card .card-overlay { transition: opacity 0.4s ease; }
+    .industry-card:hover .card-overlay { opacity: 1; }
+    .industry-card .card-desc { transition: transform 0.4s ease, opacity 0.4s ease; transform: translateY(12px); opacity: 0; }
+    .industry-card:hover .card-desc { transform: translateY(0); opacity: 1; }
+
+    /* Comparison card */
+    .comparison-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .comparison-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.3); }
+
+    /* Performance bar animation */
+    .perf-bar { transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+
+    /* Toast */
+    .toast-enter { animation: toastIn 0.4s ease forwards; }
+    .toast-exit { animation: toastOut 0.3s ease forwards; }
+    @keyframes toastIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes toastOut { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-20px); opacity: 0; } }
+
+    /* Mobile menu */
+    .mobile-menu { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease; }
+    .mobile-menu.closed { transform: translateY(-10px); opacity: 0; pointer-events: none; }
+    .mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #121414; }
+    ::-webkit-scrollbar-thumb { background: #333535; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #44474d; }
+
+/* ===== PREMIUM VISUAL EFFECTS ===== */
+
+/* Animated gradient text */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-text {
+  background: linear-gradient(135deg, #aec6ff, #508eff, #b9c7e4, #508eff, #aec6ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 6s ease infinite;
+}
+
+/* Button shimmer/shine effect */
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Noise texture overlay for premium depth */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1000;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Floating particles animation */
+@keyframes floatParticle {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(var(--tx, 100px), var(--ty, -200px)) scale(0); opacity: 0; }
+}
+.particle {
+  position: absolute;
+  width: var(--size, 4px);
+  height: var(--size, 4px);
+  border-radius: 50%;
+  background: rgba(80, 142, 255, var(--alpha, 0.3));
+  animation: floatParticle var(--duration, 8s) var(--delay, 0s) infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* 3D tilt card perspective */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg));
+}
+.tilt-card .tilt-inner {
+  transform: translateZ(30px);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Animated border gradient */
+@keyframes borderRotate {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.animated-border {
+  position: relative;
+  border: none !important;
+}
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(from var(--angle, 0deg), transparent 40%, rgba(80,142,255,0.4) 50%, transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderRotate 4s linear infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Magnetic button hover */
+.btn-magnetic {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Enhanced scroll reveal with stagger */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Glassmorphism panel (enhanced) */
+.glass-panel {
+  background: rgba(18, 20, 20, 0.4);
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Smooth page load */
+@keyframes pageLoad {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body {
+  animation: pageLoad 0.6s ease-out;
+}
+
+/* Hover glow for interactive elements */
+.hover-glow {
+  transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(80, 142, 255, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Pulsing dot for live indicators */
+@keyframes livePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+/* Stats counter glow */
+.stat-glow {
+  text-shadow: 0 0 40px rgba(80, 142, 255, 0.3);
+}
+
+/* Section separator gradient line */
+.section-separator {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(80,142,255,0.3) 50%, transparent 100%);
+}
+
+/* Image shine on hover */
+.img-shine {
+  position: relative;
+  overflow: hidden;
+}
+.img-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.05) 50%, transparent 60%);
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+.img-shine:hover::after {
+  transform: rotate(30deg) translateX(100%);
+}
+
+/* Project card image placeholder */
+.project-placeholder {
+  background: linear-gradient(135deg, #0a192f 0%, #1a1c1c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  </style>
+</head>
+<body class="bg-background text-on-background antialiased">
+
+  <!-- ============ FIXED NAVIGATION ============ -->
+  <nav class="nav-glass fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-[80px] flex items-center justify-between h-16 lg:h-[72px]">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="material-symbols-outlined text-secondary-container text-3xl">ac_unit</span>
+        <span class="font-headline font-semibold text-on-surface text-lg tracking-tight">Air Control India</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="nav-link-active font-label text-label-caps uppercase pb-1 transition-colors">Home</a>
+        <a href="about.html" class="font-label text-label-caps uppercase text-on-surface-variant hover:text-secondary pb-1 border-b-2 border-transparent hover:border-secondary-container transition-colors">About</a>
+        <a href="industries.html" class="font-label text-label-caps uppercase text-on-surface-variant hover:text-secondary pb-1 border-b-2 border-transparent hover:border-secondary-container transition-colors">Industries</a>
+        <a href="products.html" class="font-label text-label-caps uppercase text-on-surface-variant hover:text-secondary pb-1 border-b-2 border-transparent hover:border-secondary-container transition-colors">Products</a>
+        <a href="projects.html" class="font-label text-label-caps uppercase text-on-surface-variant hover:text-secondary pb-1 border-b-2 border-transparent hover:border-secondary-container transition-colors">Projects</a>
+        <a href="contact.html" class="font-label text-label-caps uppercase text-on-surface-variant hover:text-secondary pb-1 border-b-2 border-transparent hover:border-secondary-container transition-colors">Contact</a>
+      </div>
+
+      <!-- CTA + Hamburger -->
+      <div class="flex items-center gap-4">
+        <a href="#consultation" class="hidden md:inline-flex items-center gap-2 bg-secondary-container text-on-secondary font-label text-label-caps uppercase px-5 py-2.5 rounded-xl hover:bg-secondary transition-colors font-semibold btn-shine">
+          <span class="material-symbols-outlined text-base">event</span>
+          Request Consultation
+        </a>
+        <button id="hamburger" class="lg:hidden flex flex-col gap-[5px] p-2 focus:outline-none" aria-label="Toggle Menu">
+          <span class="hamburger-line block w-5 h-[2px] bg-on-surface transition-all duration-300"></span>
+          <span class="hamburger-line block w-5 h-[2px] bg-on-surface transition-all duration-300"></span>
+          <span class="hamburger-line block w-5 h-[2px] bg-on-surface transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu closed lg:hidden absolute top-full left-0 right-0 bg-surface-container border-b border-outline-variant">
+      <div class="flex flex-col px-5 py-4 gap-1">
+        <a href="index.html" class="font-label text-label-caps uppercase text-secondary py-3 border-l-2 border-secondary-container pl-4 bg-primary-container/30 rounded">Home</a>
+        <a href="about.html" class="font-label text-label-caps uppercase text-on-surface-variant hover:text-secondary py-3 pl-4 transition-colors">About</a>
+        <a href="industries.html" class="font-label text-label-caps uppercase text-on-surface-variant hover:text-secondary py-3 pl-4 transition-colors">Industries</a>
+        <a href="products.html" class="font-label text-label-caps uppercase text-on-surface-variant hover:text-secondary py-3 pl-4 transition-colors">Products</a>
+        <a href="projects.html" class="font-label text-label-caps uppercase text-on-surface-variant hover:text-secondary py-3 pl-4 transition-colors">Projects</a>
+        <a href="contact.html" class="font-label text-label-caps uppercase text-on-surface-variant hover:text-secondary py-3 pl-4 transition-colors">Contact</a>
+        <a href="#consultation" class="mt-3 flex items-center justify-center gap-2 bg-secondary-container text-on-secondary font-label text-label-caps uppercase px-5 py-3 rounded-xl hover:bg-secondary transition-colors font-semibold">
+          <span class="material-symbols-outlined text-base">event</span>
+          Request Consultation
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 hero-gradient"></div>
+    <div class="absolute inset-0 hero-mesh"></div>
+    <div class="hero-mesh-glow parallax-bg" data-speed="0.15"></div>
+    <!-- Decorative grid lines -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 80px 80px;"></div>
+
+    <div class="relative z-10 max-w-[1440px] mx-auto px-5 lg:px-[80px] w-full pt-28 pb-20 lg:pt-0 lg:pb-0">
+      <div class="max-w-3xl">
+        <!-- Animated Badge -->
+        <div class="badge-animate inline-flex items-center gap-2 bg-primary-container/60 border border-secondary-container/30 rounded-full px-4 py-2 mb-8">
+          <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+          <span class="font-label text-label-caps uppercase text-secondary">In Association with Carrier -- Since 1982</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="font-display text-display-xl text-on-surface mb-6 leading-tight gradient-text" style="font-size: clamp(36px, 5vw, 72px); line-height: 1.1;">
+          Your Prime Source of HVAC & Refrigeration Systems
+        </h1>
+
+        <!-- Description -->
+        <p class="font-body text-body-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+          We design, engineer, install and commission specialized and custom-built HVAC and refrigeration systems for offshore platforms, marine vessels, and industrial facilities -- anywhere on the globe.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#consultation" class="inline-flex items-center justify-center gap-2 bg-secondary-container text-on-secondary font-label text-label-caps uppercase px-8 py-4 rounded-xl hover:bg-secondary transition-all font-semibold group btn-shine btn-magnetic">
+            <span>Discuss Your Project</span>
+            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+          <a href="projects.html" class="inline-flex items-center justify-center gap-2 border border-outline-variant text-on-surface font-label text-label-caps uppercase px-8 py-4 rounded-xl hover:bg-surface-container-high hover:border-outline transition-all font-semibold btn-magnetic">
+            <span>View Our Projects</span>
+            <span class="material-symbols-outlined text-lg">open_in_new</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+      <span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Scroll</span>
+      <div class="w-[1px] h-8 bg-gradient-to-b from-secondary-container to-transparent animate-pulse"></div>
+    </div>
+  </section>
+
+  <!-- ============ STATS COUNTER SECTION ============ -->
+  <section class="relative py-20 lg:py-24 border-y border-outline-variant/30 bg-surface-container-low" id="stats">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-[80px]">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-gutter">
+        <!-- Stat 1: Founded 1982 -->
+        <div class="text-center group reveal" data-delay="0">
+          <div class="flex items-baseline justify-center gap-1 mb-2">
+            <span class="font-display text-stats-number text-secondary counter stat-glow" data-target="42" style="font-size: clamp(36px, 4vw, 56px);">0</span>
+            <span class="font-display text-headline-md text-secondary-container">+</span>
+          </div>
+          <p class="font-label text-label-caps uppercase text-on-surface-variant tracking-widest">Years Since 1982</p>
+        </div>
+        <!-- Stat 2: Vessels -->
+        <div class="text-center group reveal" data-delay="100">
+          <div class="flex items-baseline justify-center gap-1 mb-2">
+            <span class="font-display text-stats-number text-secondary counter stat-glow" data-target="100" style="font-size: clamp(36px, 4vw, 56px);">0</span>
+            <span class="font-display text-headline-md text-secondary-container">+</span>
+          </div>
+          <p class="font-label text-label-caps uppercase text-on-surface-variant tracking-widest">Vessels Delivered</p>
+        </div>
+        <!-- Stat 3: Countries -->
+        <div class="text-center group reveal" data-delay="200">
+          <div class="flex items-baseline justify-center gap-1 mb-2">
+            <span class="font-display text-stats-number text-secondary counter stat-glow" data-target="10" style="font-size: clamp(36px, 4vw, 56px);">0</span>
+            <span class="font-display text-headline-md text-secondary-container">+</span>
+          </div>
+          <p class="font-label text-label-caps uppercase text-on-surface-variant tracking-widest">Countries Served</p>
+        </div>
+        <!-- Stat 4: Carrier Partnership -->
+        <div class="text-center group reveal" data-delay="300">
+          <div class="flex items-baseline justify-center gap-1 mb-2">
+            <span class="material-symbols-outlined text-secondary stat-glow" style="font-size: clamp(36px, 4vw, 56px);">handshake</span>
+          </div>
+          <p class="font-label text-label-caps uppercase text-on-surface-variant tracking-widest">Carrier Exclusive Dealer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INDUSTRIES SERVED ============ -->
+  <section class="py-24 lg:py-[160px]" id="industries">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-[80px]">
+      <!-- Section Header -->
+      <div class="text-center mb-16 lg:mb-20">
+        <span class="font-label text-label-caps uppercase text-secondary-container tracking-widest block mb-4 reveal" data-delay="0">Sectors We Serve</span>
+        <h2 class="font-headline text-headline-lg text-on-surface mb-4" style="font-size: clamp(32px, 3.5vw, 48px);">Industries Served</h2>
+        <p class="font-body text-body-lg text-on-surface-variant max-w-2xl mx-auto">Purpose-built HVAC and refrigeration systems engineered for offshore, marine, and industrial environments worldwide.</p>
+      </div>
+
+      <!-- Industry Cards Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-gutter">
+        <!-- Marine Vessels -->
+        <div class="industry-card glow-card tilt-card relative rounded-xl overflow-hidden h-[400px] lg:h-[480px] cursor-pointer group">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#0a3d62] via-[#0a192f] to-[#1a1c2c]"></div>
+          <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 30% 70%, rgba(80,142,255,0.3), transparent 60%);"></div>
+          <div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-60"></div>
+          <div class="relative z-10 h-full flex flex-col justify-end p-6 lg:p-8">
+            <span class="material-symbols-outlined text-secondary-container text-4xl mb-4">directions_boat</span>
+            <h3 class="font-headline text-headline-md text-on-surface mb-2">Marine Vessels</h3>
+            <p class="font-label text-label-caps uppercase text-secondary-container mb-3">Commercial & Passenger Fleets</p>
+            <p class="card-desc font-body text-body-md text-on-surface-variant">Complete HVAC for bulk carriers, tankers, passenger vessels, tugboats, and platform supply vessels. Clients include SCI, Great Eastern Shipping, and Bourbon.</p>
+          </div>
+        </div>
+
+        <!-- Offshore Oil & Gas -->
+        <div class="industry-card glow-card tilt-card relative rounded-xl overflow-hidden h-[400px] lg:h-[480px] cursor-pointer group">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#1a3a2a] via-[#0a192f] to-[#1c1c2c]"></div>
+          <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 70% 30%, rgba(80,200,120,0.3), transparent 60%);"></div>
+          <div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-60"></div>
+          <div class="relative z-10 h-full flex flex-col justify-end p-6 lg:p-8">
+            <span class="material-symbols-outlined text-secondary-container text-4xl mb-4">oil_barrel</span>
+            <h3 class="font-headline text-headline-md text-on-surface mb-2">Offshore Oil & Gas</h3>
+            <p class="font-label text-label-caps uppercase text-secondary-container mb-3">Platforms & Rigs</p>
+            <p class="card-desc font-body text-body-md text-on-surface-variant">HVAC for offshore drilling rigs, production platforms, and MODUs. Proven on ONGC platforms (Sagar Vijay, Heera), Petronas Yetagun, and Reliance KG Basin.</p>
+          </div>
+        </div>
+
+        <!-- Defense & Security -->
+        <div class="industry-card glow-card tilt-card relative rounded-xl overflow-hidden h-[400px] lg:h-[480px] cursor-pointer group">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#2c1a3a] via-[#0a192f] to-[#1c1c22]"></div>
+          <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 50% 50%, rgba(180,100,255,0.3), transparent 60%);"></div>
+          <div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-60"></div>
+          <div class="relative z-10 h-full flex flex-col justify-end p-6 lg:p-8">
+            <span class="material-symbols-outlined text-secondary-container text-4xl mb-4">shield</span>
+            <h3 class="font-headline text-headline-md text-on-surface mb-2">Defense & Security</h3>
+            <p class="font-label text-label-caps uppercase text-secondary-container mb-3">Navy & Coast Guard</p>
+            <p class="card-desc font-body text-body-md text-on-surface-variant">Climate control systems for the Indian Navy (INS Shishumar Class Submarine, 7 Fuel Barges) and Indian Coast Guard vessel Raziya Sultana.</p>
+          </div>
+        </div>
+
+        <!-- Luxury Yachts -->
+        <div class="industry-card glow-card tilt-card relative rounded-xl overflow-hidden h-[400px] lg:h-[480px] cursor-pointer group">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#3a2a1a] via-[#0a192f] to-[#1c1c22]"></div>
+          <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 50% 50%, rgba(255,200,80,0.3), transparent 60%);"></div>
+          <div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-60"></div>
+          <div class="relative z-10 h-full flex flex-col justify-end p-6 lg:p-8">
+            <span class="material-symbols-outlined text-secondary-container text-4xl mb-4">sailing</span>
+            <h3 class="font-headline text-headline-md text-on-surface mb-2">Luxury Yachts</h3>
+            <p class="font-label text-label-caps uppercase text-secondary-container mb-3">Superyacht HVAC</p>
+            <p class="card-desc font-body text-body-md text-on-surface-variant">Bespoke climate systems for superyachts including M.Y. Dubai (175m) and M.Y. Dubawi for Platinum Yacht FZCO, UAE.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PROJECTS ============ -->
+  <section class="relative py-24 lg:py-[160px] bg-surface-container-low" id="projects">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-[80px]">
+      <!-- Section Header -->
+      <div class="text-center mb-16 lg:mb-20">
+        <span class="font-label text-label-caps uppercase text-secondary-container tracking-widest block mb-4 reveal" data-delay="0">Proven Track Record</span>
+        <h2 class="font-headline text-headline-lg text-on-surface mb-4" style="font-size: clamp(32px, 3.5vw, 48px);">Featured Projects</h2>
+        <p class="font-body text-body-lg text-on-surface-variant max-w-2xl mx-auto">Select projects showcasing our capabilities across marine, offshore, defense, and luxury yacht sectors.</p>
+      </div>
+
+      <!-- Project Cards -->
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-gutter">
+        <!-- Project 1: M.Y. Dubai -->
+        <div class="glow-card bg-surface-container border border-outline-variant/30 rounded-xl overflow-hidden reveal" data-delay="0">
+          <div class="project-placeholder h-48 lg:h-56">
+            <!-- [REAL PROJECT PHOTO REQUIRED: M.Y. Dubai 175m superyacht] -->
+            <span class="material-symbols-outlined text-secondary-container/30 text-7xl">sailing</span>
+          </div>
+          <div class="p-6 lg:p-8">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="font-label text-[10px] uppercase tracking-widest bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full">Luxury Yacht</span>
+              <span class="font-label text-[10px] uppercase tracking-widest bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full">UAE</span>
+            </div>
+            <h3 class="font-headline text-headline-md text-on-surface mb-2">M.Y. Dubai -- 175m Superyacht</h3>
+            <p class="font-body text-body-md text-on-surface-variant mb-4">Complete HVAC system for one of the world's largest private yachts. Built for Platinum Yacht FZCO at Dubai Drydocks.</p>
+            <p class="font-label text-label-caps text-outline">Client: Platinum Yacht FZCO</p>
+          </div>
+        </div>
+
+        <!-- Project 2: INS Shishumar -->
+        <div class="glow-card bg-surface-container border border-outline-variant/30 rounded-xl overflow-hidden reveal" data-delay="100">
+          <div class="project-placeholder h-48 lg:h-56">
+            <!-- [REAL PROJECT PHOTO REQUIRED: INS Shishumar Class Submarine] -->
+            <span class="material-symbols-outlined text-secondary-container/30 text-7xl">security</span>
+          </div>
+          <div class="p-6 lg:p-8">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="font-label text-[10px] uppercase tracking-widest bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full">Defense</span>
+              <span class="font-label text-[10px] uppercase tracking-widest bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full">India</span>
+            </div>
+            <h3 class="font-headline text-headline-md text-on-surface mb-2">INS Shishumar Class Submarine</h3>
+            <p class="font-body text-body-md text-on-surface-variant mb-4">Specialized HVAC systems for Indian Navy submarine class. Engineered at Mazagon Dock, Mumbai.</p>
+            <p class="font-label text-label-caps text-outline">Client: Indian Navy</p>
+          </div>
+        </div>
+
+        <!-- Project 3: ONGC Sagar Vijay -->
+        <div class="glow-card bg-surface-container border border-outline-variant/30 rounded-xl overflow-hidden reveal" data-delay="200">
+          <div class="project-placeholder h-48 lg:h-56">
+            <!-- [REAL PROJECT PHOTO REQUIRED: Sagar Vijay MODU offshore rig] -->
+            <span class="material-symbols-outlined text-secondary-container/30 text-7xl">oil_barrel</span>
+          </div>
+          <div class="p-6 lg:p-8">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="font-label text-[10px] uppercase tracking-widest bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full">Offshore</span>
+              <span class="font-label text-[10px] uppercase tracking-widest bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full">India</span>
+            </div>
+            <h3 class="font-headline text-headline-md text-on-surface mb-2">Sagar Vijay MODU -- ONGC</h3>
+            <p class="font-body text-body-md text-on-surface-variant mb-4">HVAC retrofit for mobile offshore drilling unit. Complete system overhaul at Cochin Shipyard.</p>
+            <p class="font-label text-label-caps text-outline">Client: ONGC / Cochin Shipyard</p>
+          </div>
+        </div>
+
+        <!-- Project 4: Bourbon PSVs -->
+        <div class="glow-card bg-surface-container border border-outline-variant/30 rounded-xl overflow-hidden reveal" data-delay="300">
+          <div class="project-placeholder h-48 lg:h-56">
+            <!-- [REAL PROJECT PHOTO REQUIRED: Bourbon Platform Supply Vessels] -->
+            <span class="material-symbols-outlined text-secondary-container/30 text-7xl">directions_boat</span>
+          </div>
+          <div class="p-6 lg:p-8">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="font-label text-[10px] uppercase tracking-widest bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full">Marine</span>
+              <span class="font-label text-[10px] uppercase tracking-widest bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full">UAE</span>
+            </div>
+            <h3 class="font-headline text-headline-md text-on-surface mb-2">Bourbon -- 6 Platform Supply Vessels</h3>
+            <p class="font-body text-body-md text-on-surface-variant mb-4">HVAC systems for a fleet of 6 platform supply vessels, built at Grandweld Shipyard, Dubai.</p>
+            <p class="font-label text-label-caps text-outline">Client: Bourbon / Grandweld Shipyard</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- View All Projects CTA -->
+      <div class="text-center mt-12">
+        <a href="projects.html" class="inline-flex items-center gap-2 border border-outline-variant text-on-surface font-label text-label-caps uppercase px-8 py-4 rounded-xl hover:bg-surface-container-high hover:border-outline transition-all font-semibold btn-magnetic">
+          <span>View All Projects</span>
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENGINEERING EXCELLENCE ============ -->
+  <section class="relative py-24 lg:py-[160px] bg-primary-container overflow-hidden" id="excellence">
+    <div class="absolute inset-0 grid-pattern"></div>
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-[80px] relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-gutter items-center">
+        <!-- Left: Content -->
+        <div>
+          <span class="font-label text-label-caps uppercase text-secondary-container tracking-widest block mb-4 reveal" data-delay="0">Our Capabilities</span>
+          <h2 class="font-headline text-headline-lg text-on-surface mb-6" style="font-size: clamp(32px, 3.5vw, 48px);">Complete Turnkey Solutions</h2>
+          <p class="font-body text-body-lg text-on-surface-variant mb-10 max-w-lg">From feasibility studies through design, supply, installation, commissioning, and after-sales support -- a single point of contact for your entire HVAC project.</p>
+
+          <!-- Features List -->
+          <div class="space-y-6">
+            <!-- Feature 1 -->
+            <div class="flex gap-4 items-start group reveal" data-delay="0">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-secondary-container/10 border border-secondary-container/20 flex items-center justify-center group-hover:bg-secondary-container/20 transition-colors">
+                <span class="material-symbols-outlined text-secondary-container">calculate</span>
+              </div>
+              <div>
+                <h4 class="font-headline text-body-lg font-semibold text-on-surface mb-1">Design & Engineering</h4>
+                <p class="font-body text-body-md text-on-surface-variant">Heat load calculations using Carrier software, ventilation design with air change rates, P&I schematics, duct layout drawings, and class submission drawings.</p>
+              </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="flex gap-4 items-start group reveal" data-delay="150">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-secondary-container/10 border border-secondary-container/20 flex items-center justify-center group-hover:bg-secondary-container/20 transition-colors">
+                <span class="material-symbols-outlined text-secondary-container">precision_manufacturing</span>
+              </div>
+              <div>
+                <h4 class="font-headline text-body-lg font-semibold text-on-surface mb-1">Equipment Supply</h4>
+                <p class="font-body text-body-md text-on-surface-variant">Exclusive dealer for Carrier Transicold marine products in India. Chillers, compressors, AHUs, fan coil units, ventilation fans, and marine deck fittings.</p>
+              </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="flex gap-4 items-start group reveal" data-delay="300">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-secondary-container/10 border border-secondary-container/20 flex items-center justify-center group-hover:bg-secondary-container/20 transition-colors">
+                <span class="material-symbols-outlined text-secondary-container">build</span>
+              </div>
+              <div>
+                <h4 class="font-headline text-body-lg font-semibold text-on-surface mb-1">Installation & After-Sales</h4>
+                <p class="font-body text-body-md text-on-surface-variant">Complete turnkey installation and commissioning with on-site technicians. 1-year warranty and ongoing technical support for the life of every system.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Engineering Capabilities Dashboard -->
+        <div class="glass-panel animated-border rounded-xl p-6 lg:p-8 backdrop-blur-sm">
+          <div class="flex items-center justify-between mb-8">
+            <div>
+              <h4 class="font-headline text-body-lg font-semibold text-on-surface">Engineering Capabilities</h4>
+              <p class="font-label text-label-caps uppercase text-on-surface-variant mt-1">Core Competencies</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary-container text-2xl">engineering</span>
+            </div>
+          </div>
+
+          <!-- Capabilities list -->
+          <div class="space-y-5">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">Heat load calculation software (with Carrier inputs)</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">Ventilation design -- air change rates, fan capacities, static pressure</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">Engine room systems -- breathing air, heat emission, temp control below 50 degrees C</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">P&I schematic diagrams with field connections</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">Duct layout drawings with sizing calculations</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">Classification society rules & Indian Standards (IS) compliance</span>
+            </div>
+          </div>
+
+          <!-- Bottom stats row -->
+          <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-outline-variant/30">
+            <div class="text-center">
+              <p class="font-display text-headline-md text-secondary">47</p>
+              <p class="font-label text-[10px] uppercase text-on-surface-variant tracking-wider mt-1">Marine Projects</p>
+            </div>
+            <div class="text-center">
+              <p class="font-display text-headline-md text-secondary">9</p>
+              <p class="font-label text-[10px] uppercase text-on-surface-variant tracking-wider mt-1">Offshore Platforms</p>
+            </div>
+            <div class="text-center">
+              <p class="font-display text-headline-md text-secondary">3</p>
+              <p class="font-label text-[10px] uppercase text-on-surface-variant tracking-wider mt-1">EEPC Awards</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE AIR CONTROL INDIA ============ -->
+  <section class="py-24 lg:py-[160px]" id="comparison">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-[80px]">
+      <!-- Section Header -->
+      <div class="text-center mb-16 lg:mb-20">
+        <span class="font-label text-label-caps uppercase text-secondary-container tracking-widest block mb-4 reveal" data-delay="0">The Difference</span>
+        <h2 class="font-headline text-headline-lg text-on-surface mb-4" style="font-size: clamp(32px, 3.5vw, 48px);">Why Choose Air Control India</h2>
+        <p class="font-body text-body-lg text-on-surface-variant max-w-2xl mx-auto">Decades of proven expertise, an exclusive Carrier partnership, and global project delivery set us apart.</p>
+      </div>
+
+      <!-- Comparison Cards -->
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-gutter max-w-5xl mx-auto">
+        <!-- Typical Contractor -->
+        <div class="comparison-card glow-card bg-surface-container border border-outline-variant/30 rounded-xl p-8 reveal" data-delay="0">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center">
+              <span class="material-symbols-outlined text-outline">business</span>
+            </div>
+            <div>
+              <h3 class="font-headline text-body-lg font-semibold text-on-surface-variant">Typical HVAC Contractor</h3>
+              <p class="font-label text-label-caps text-outline">Standard Approach</p>
+            </div>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-error/60 text-lg mt-0.5">close</span>
+              <span class="font-body text-body-md text-on-surface-variant">Multiple vendors for design, equipment, and installation</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-error/60 text-lg mt-0.5">close</span>
+              <span class="font-body text-body-md text-on-surface-variant">Limited marine and offshore-specific experience</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-error/60 text-lg mt-0.5">close</span>
+              <span class="font-body text-body-md text-on-surface-variant">No direct access to Carrier marine product line</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-error/60 text-lg mt-0.5">close</span>
+              <span class="font-body text-body-md text-on-surface-variant">Limited classification society drawing experience</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-error/60 text-lg mt-0.5">close</span>
+              <span class="font-body text-body-md text-on-surface-variant">Separate after-sales and spares procurement</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Air Control Advantage -->
+        <div class="comparison-card glow-card bg-gradient-to-br from-primary-container to-surface-container border border-secondary-container/30 rounded-xl p-8 relative overflow-hidden reveal" data-delay="150">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div class="flex items-center gap-3 mb-8 relative z-10">
+            <div class="w-10 h-10 rounded-xl bg-secondary-container/20 flex items-center justify-center">
+              <span class="material-symbols-outlined text-secondary-container">verified</span>
+            </div>
+            <div>
+              <h3 class="font-headline text-body-lg font-semibold text-secondary">Air Control India Advantage</h3>
+              <p class="font-label text-label-caps text-secondary-container">Turnkey Partner</p>
+            </div>
+          </div>
+          <ul class="space-y-4 relative z-10">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">Single contact for design, supply, installation, and commissioning</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">42+ years specializing in marine, offshore, and industrial HVAC</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">Exclusive Carrier Transicold marine dealer in India</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">3x EEPC National Export Award winner (2006-2009)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-container text-lg mt-0.5">check_circle</span>
+              <span class="font-body text-body-md text-on-surface">1-year warranty with dedicated on-site technicians and spares support</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUSTED BY / CLIENT LOGOS ============ -->
+  <section class="py-16 lg:py-20 bg-surface-container-low border-y border-outline-variant/20">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-[80px]">
+      <div class="text-center mb-12">
+        <span class="font-label text-label-caps uppercase text-secondary-container tracking-widest block mb-4">Trusted By</span>
+        <h2 class="font-headline text-headline-md text-on-surface">Leading Organizations Worldwide</h2>
+      </div>
+      <!-- [CLIENT LOGOS -- TO BE COLLECTED FROM COMPANY] -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div class="bg-surface-container rounded-xl p-4 flex items-center justify-center h-20 border border-outline-variant/20">
+          <span class="font-label text-[11px] text-on-surface-variant text-center">Indian Navy</span>
+        </div>
+        <div class="bg-surface-container rounded-xl p-4 flex items-center justify-center h-20 border border-outline-variant/20">
+          <span class="font-label text-[11px] text-on-surface-variant text-center">ONGC</span>
+        </div>
+        <div class="bg-surface-container rounded-xl p-4 flex items-center justify-center h-20 border border-outline-variant/20">
+          <span class="font-label text-[11px] text-on-surface-variant text-center">Carrier</span>
+        </div>
+        <div class="bg-surface-container rounded-xl p-4 flex items-center justify-center h-20 border border-outline-variant/20">
+          <span class="font-label text-[11px] text-on-surface-variant text-center">SCI</span>
+        </div>
+        <div class="bg-surface-container rounded-xl p-4 flex items-center justify-center h-20 border border-outline-variant/20">
+          <span class="font-label text-[11px] text-on-surface-variant text-center">Petronas</span>
+        </div>
+        <div class="bg-surface-container rounded-xl p-4 flex items-center justify-center h-20 border border-outline-variant/20">
+          <span class="font-label text-[11px] text-on-surface-variant text-center">Dubai Drydocks</span>
+        </div>
+      </div>
+      <p class="text-center mt-6 font-body text-[13px] text-outline">Also: Indian Coast Guard, Reliance/McDermott, Bourbon, Kuwait Oil Company, Great Eastern Shipping, Grandweld Shipyard, ABG Shipyard, Cochin Shipyard, Goa Shipyard, Mazagon Dock, L&T, Bharati Shipyard</p>
+    </div>
+  </section>
+
+  <!-- ============ CONSULTATION FORM ============ -->
+  <section class="py-24 lg:py-[160px] bg-surface-container-low" id="consultation">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-[80px]">
+      <div class="max-w-3xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <span class="font-label text-label-caps uppercase text-secondary-container tracking-widest block mb-4 reveal" data-delay="0">Get Started</span>
+          <h2 class="font-headline text-headline-lg text-on-surface mb-4" style="font-size: clamp(32px, 3.5vw, 48px);">Discuss Your Project Requirements</h2>
+          <p class="font-body text-body-lg text-on-surface-variant">Tell us about your HVAC or refrigeration needs and our engineering team will respond with a tailored proposal.</p>
+        </div>
+
+        <!-- Direct Contact Info -->
+        <div class="grid md:grid-cols-3 gap-4 mb-8">
+          <a href="mailto:info@aircontrolindia.com" class="glass-panel rounded-xl p-4 flex items-center gap-3 hover-glow">
+            <span class="material-symbols-outlined text-secondary-container">email</span>
+            <span class="font-body text-body-md text-on-surface-variant">info@aircontrolindia.com</span>
+          </a>
+          <a href="tel:+917410090100" class="glass-panel rounded-xl p-4 flex items-center gap-3 hover-glow">
+            <span class="material-symbols-outlined text-secondary-container">call</span>
+            <span class="font-body text-body-md text-on-surface-variant">+91 7410090100</span>
+          </a>
+          <a href="https://wa.me/919764499933" target="_blank" rel="noopener" class="glass-panel rounded-xl p-4 flex items-center gap-3 hover-glow">
+            <span class="material-symbols-outlined text-secondary-container">chat</span>
+            <span class="font-body text-body-md text-on-surface-variant">WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Form -->
+        <form id="consultationForm" class="glow-card bg-surface-container border border-outline-variant/30 rounded-xl p-6 lg:p-10 space-y-6 reveal" novalidate>
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Full Name -->
+            <div>
+              <label class="font-label text-label-caps uppercase text-on-surface-variant block mb-2">Full Name <span class="text-error">*</span></label>
+              <input type="text" name="fullName" required placeholder="Your full name"
+                class="w-full bg-surface-container-high border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface font-body text-body-md placeholder:text-outline focus:outline-none focus:border-secondary-container focus:ring-1 focus:ring-secondary-container/40 transition-colors" />
+            </div>
+            <!-- Work Email -->
+            <div>
+              <label class="font-label text-label-caps uppercase text-on-surface-variant block mb-2">Work Email <span class="text-error">*</span></label>
+              <input type="email" name="workEmail" required placeholder="you@company.com"
+                class="w-full bg-surface-container-high border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface font-body text-body-md placeholder:text-outline focus:outline-none focus:border-secondary-container focus:ring-1 focus:ring-secondary-container/40 transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Industry -->
+            <div>
+              <label class="font-label text-label-caps uppercase text-on-surface-variant block mb-2">Industry <span class="text-error">*</span></label>
+              <select name="industry" required
+                class="w-full bg-surface-container-high border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface font-body text-body-md focus:outline-none focus:border-secondary-container focus:ring-1 focus:ring-secondary-container/40 transition-colors appearance-none cursor-pointer"
+                style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238f9097%22 stroke-width=%222%22><polyline points=%226,9 12,15 18,9%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 18px;">
+                <option value="" disabled selected>Select your industry</option>
+                <option value="marine">Marine & Commercial Shipping</option>
+                <option value="offshore">Offshore Oil & Gas</option>
+                <option value="defense">Defense & Naval</option>
+                <option value="yacht">Luxury Yachts</option>
+                <option value="industrial">Industrial & Manufacturing</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <!-- Project Location -->
+            <div>
+              <label class="font-label text-label-caps uppercase text-on-surface-variant block mb-2">Project Location</label>
+              <input type="text" name="projectLocation" placeholder="City, Country"
+                class="w-full bg-surface-container-high border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface font-body text-body-md placeholder:text-outline focus:outline-none focus:border-secondary-container focus:ring-1 focus:ring-secondary-container/40 transition-colors" />
+            </div>
+          </div>
+
+          <!-- Project Details -->
+          <div>
+            <label class="font-label text-label-caps uppercase text-on-surface-variant block mb-2">Project Details <span class="text-error">*</span></label>
+            <textarea name="projectDetails" required rows="4" placeholder="Describe your project requirements, vessel/platform type, timeline, and any specific technical needs..."
+              class="w-full bg-surface-container-high border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface font-body text-body-md placeholder:text-outline focus:outline-none focus:border-secondary-container focus:ring-1 focus:ring-secondary-container/40 transition-colors resize-none"></textarea>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit"
+            class="w-full flex items-center justify-center gap-2 bg-secondary-container text-on-secondary font-label text-label-caps uppercase px-8 py-4 rounded-xl hover:bg-secondary transition-all font-semibold group">
+            <span>Submit Project Inquiry</span>
+            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">send</span>
+          </button>
+
+          <p class="text-center font-body text-[13px] text-outline">By submitting, you agree to our privacy policy. Our engineering team will respond promptly.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-surface-container-lowest border-t border-outline-variant/20 pt-16 lg:pt-20 pb-8">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-[80px]">
+      <div class="grid lg:grid-cols-4 gap-12 lg:gap-gutter mb-16">
+        <!-- Column 1: Logo & Description -->
+        <div class="lg:col-span-1">
+          <a href="index.html" class="flex items-center gap-2 mb-6">
+            <span class="material-symbols-outlined text-secondary-container text-3xl">ac_unit</span>
+            <span class="font-headline font-semibold text-on-surface text-lg tracking-tight">Air Control India</span>
+          </a>
+          <p class="font-body text-body-md text-on-surface-variant mb-4 leading-relaxed">Your prime source of HVAC & refrigeration systems for offshore, marine, and industrial environments since 1982.</p>
+          <p class="font-body text-body-md text-on-surface-variant mb-6 leading-relaxed">In association with Carrier.</p>
+          <!-- Contact -->
+          <div class="space-y-2 mb-6">
+            <a href="mailto:info@aircontrolindia.com" class="flex items-center gap-2 font-body text-[13px] text-on-surface-variant hover:text-secondary transition-colors">
+              <span class="material-symbols-outlined text-sm">email</span>
+              info@aircontrolindia.com
+            </a>
+            <a href="tel:+917410090100" class="flex items-center gap-2 font-body text-[13px] text-on-surface-variant hover:text-secondary transition-colors">
+              <span class="material-symbols-outlined text-sm">call</span>
+              +91 7410090100
+            </a>
+            <a href="https://wa.me/919764499933" target="_blank" rel="noopener" class="flex items-center gap-2 font-body text-[13px] text-on-surface-variant hover:text-secondary transition-colors">
+              <span class="material-symbols-outlined text-sm">chat</span>
+              WhatsApp: +91 9764499933
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Solutions -->
+        <div>
+          <h4 class="font-label text-label-caps uppercase text-on-surface tracking-widest mb-6">Solutions</h4>
+          <ul class="space-y-3">
+            <li><a href="products.html" class="font-body text-body-md text-on-surface-variant hover:text-secondary transition-colors">Marine HVAC Systems</a></li>
+            <li><a href="products.html" class="font-body text-body-md text-on-surface-variant hover:text-secondary transition-colors">Offshore Climate Control</a></li>
+            <li><a href="products.html" class="font-body text-body-md text-on-surface-variant hover:text-secondary transition-colors">Chillers & Compressors</a></li>
+            <li><a href="products.html" class="font-body text-body-md text-on-surface-variant hover:text-secondary transition-colors">Ventilation & Deck Fittings</a></li>
+            <li><a href="products.html" class="font-body text-body-md text-on-surface-variant hover:text-secondary transition-colors">Marine Interior & Outfitting</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Quick Links -->
+        <div>
+          <h4 class="font-label text-label-caps uppercase text-on-surface tracking-widest mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="font-body text-body-md text-on-surface-variant hover:text-secondary transition-colors">About Us</a></li>
+            <li><a href="industries.html" class="font-body text-body-md text-on-surface-variant hover:text-secondary transition-colors">Industries</a></li>
+            <li><a href="projects.html" class="font-body text-body-md text-on-surface-variant hover:text-secondary transition-colors">Projects</a></li>
+            <li><a href="contact.html" class="font-body text-body-md text-on-surface-variant hover:text-secondary transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Awards & Recognition -->
+        <div>
+          <h4 class="font-label text-label-caps uppercase text-on-surface tracking-widest mb-6">Awards & Recognition</h4>
+          <div class="space-y-3">
+            <div class="bg-surface-container-high rounded-xl p-3 border border-outline-variant/20">
+              <span class="font-label text-[11px] text-secondary-container block">EEPC India 2006-07</span>
+              <span class="font-label text-[10px] text-on-surface-variant">Western Region Star Performer Export Award</span>
+            </div>
+            <div class="bg-surface-container-high rounded-xl p-3 border border-outline-variant/20">
+              <span class="font-label text-[11px] text-secondary-container block">EEPC India 2007-08</span>
+              <span class="font-label text-[10px] text-on-surface-variant">National Star Performer Export Award</span>
+            </div>
+            <div class="bg-surface-container-high rounded-xl p-3 border border-outline-variant/20">
+              <span class="font-label text-[11px] text-secondary-container block">EEPC India 2008-09</span>
+              <span class="font-label text-[10px] text-on-surface-variant">National Star Performer Export Award</span>
+            </div>
+          </div>
+          <!-- [ISO AND OTHER CERTIFICATIONS -- TO BE VERIFIED WITH COMPANY] -->
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-outline-variant/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="font-body text-[13px] text-outline">Air Control India Pvt. Ltd. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="font-body text-[13px] text-outline hover:text-on-surface-variant transition-colors">Privacy Policy</a>
+          <a href="#" class="font-body text-[13px] text-outline hover:text-on-surface-variant transition-colors">Terms of Service</a>
+          <a href="#" class="font-body text-[13px] text-outline hover:text-on-surface-variant transition-colors">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ TOAST NOTIFICATION ============ -->
+  <div id="toast" class="fixed bottom-8 right-8 z-[100] hidden">
+    <div class="flex items-center gap-3 bg-primary-container border border-secondary-container/40 rounded-xl px-6 py-4 shadow-2xl">
+      <span class="material-symbols-outlined text-secondary-container text-2xl">check_circle</span>
+      <div>
+        <p class="font-headline text-body-md font-semibold text-on-surface">Inquiry Submitted!</p>
+        <p class="font-body text-[13px] text-on-surface-variant">Our engineering team will respond promptly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // ---- Scroll to top on page load ----
+    window.addEventListener('load', () => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    });
+
+    // ---- Mobile Hamburger Menu ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburgerLines = hamburger.querySelectorAll('.hamburger-line');
+    let menuOpen = false;
+
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        mobileMenu.classList.remove('closed');
+        mobileMenu.classList.add('open');
+        hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        hamburgerLines[1].style.opacity = '0';
+        hamburgerLines[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.classList.add('closed');
+        hamburgerLines[0].style.transform = '';
+        hamburgerLines[1].style.opacity = '1';
+        hamburgerLines[2].style.transform = '';
+      }
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.classList.remove('open');
+        mobileMenu.classList.add('closed');
+        hamburgerLines[0].style.transform = '';
+        hamburgerLines[1].style.opacity = '1';
+        hamburgerLines[2].style.transform = '';
+      });
+    });
+
+    // ---- Stats Counter Animation ----
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const duration = 2000;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        el.textContent = current;
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      requestAnimationFrame(update);
+    }
+
+    // ---- IntersectionObserver for animations ----
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.counter').forEach(animateCounter);
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const statsSection = document.getElementById('stats');
+    if (statsSection) statsObserver.observe(statsSection);
+
+    // ---- Form Submission ----
+    const form = document.getElementById('consultationForm');
+    const toast = document.getElementById('toast');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Basic validation
+      const name = form.fullName.value.trim();
+      const email = form.workEmail.value.trim();
+      const industry = form.industry.value;
+      const details = form.projectDetails.value.trim();
+
+      if (!name || !email || !industry || !details) {
+        // Highlight empty required fields
+        form.querySelectorAll('[required]').forEach(field => {
+          if (!field.value || field.value.trim() === '') {
+            field.classList.add('border-error');
+            field.addEventListener('input', () => field.classList.remove('border-error'), { once: true });
+            field.addEventListener('change', () => field.classList.remove('border-error'), { once: true });
+          }
+        });
+        return;
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        form.workEmail.classList.add('border-error');
+        form.workEmail.addEventListener('input', () => form.workEmail.classList.remove('border-error'), { once: true });
+        return;
+      }
+
+      // Show toast
+      toast.classList.remove('hidden');
+      toast.firstElementChild.classList.add('toast-enter');
+
+      // Reset form
+      form.reset();
+
+      // Hide toast after 4 seconds
+      setTimeout(() => {
+        toast.firstElementChild.classList.remove('toast-enter');
+        toast.firstElementChild.classList.add('toast-exit');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+          toast.firstElementChild.classList.remove('toast-exit');
+        }, 300);
+      }, 4000);
+    });
+
+    // ---- Navbar background opacity on scroll ----
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.style.background = 'rgba(18, 20, 20, 0.92)';
+      } else {
+        nav.style.background = 'rgba(18, 20, 20, 0.72)';
+      }
+    });
+
+    // ---- Glow Card Cursor Spotlight ----
+    const handleMouseMove = e => {
+      const { currentTarget: target } = e;
+      const rect = target.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+      target.style.setProperty("--mouse-x", `${x}px`);
+      target.style.setProperty("--mouse-y", `${y}px`);
+    };
+    document.querySelectorAll('.glow-card').forEach(card => {
+      card.addEventListener('mousemove', handleMouseMove);
+    });
+
+// ---- Enhanced Scroll Reveal with Stagger ----
+const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+const revealObserverEnhanced = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      const staggerDelay = entry.target.dataset.delay || 0;
+      setTimeout(() => {
+        entry.target.classList.add('revealed');
+      }, staggerDelay);
+      revealObserverEnhanced.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+revealElements.forEach(el => revealObserverEnhanced.observe(el));
+
+// ---- 3D Tilt Effect on Cards ----
+document.querySelectorAll('.tilt-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -5;
+    const rotateY = ((x - centerX) / centerX) * 5;
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+  });
+});
+
+// ---- Magnetic Button Effect ----
+document.querySelectorAll('.btn-magnetic').forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'translate(0, 0)';
+  });
+});
+
+// ---- Parallax Background Effect ----
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  document.querySelectorAll('.parallax-bg').forEach(el => {
+    const speed = el.dataset.speed || 0.3;
+    el.style.transform = `translateY(${scrolled * speed}px)`;
+  });
+});
+
+// ---- Floating Particles Generator ----
+function createParticles(container, count = 15) {
+  if (!container) return;
+  for (let i = 0; i < count; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.setProperty('--size', `${Math.random() * 4 + 2}px`);
+    particle.style.setProperty('--tx', `${(Math.random() - 0.5) * 300}px`);
+    particle.style.setProperty('--ty', `${-Math.random() * 400 - 100}px`);
+    particle.style.setProperty('--duration', `${Math.random() * 6 + 6}s`);
+    particle.style.setProperty('--delay', `${Math.random() * 6}s`);
+    particle.style.setProperty('--alpha', `${Math.random() * 0.3 + 0.1}`);
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.bottom = `${Math.random() * 30}%`;
+    container.appendChild(particle);
+  }
+}
+// Add particles to hero section
+const heroSection = document.querySelector('section');
+if (heroSection) createParticles(heroSection, 20);
+
+// ---- Auto-add noise overlay to body ----
+document.body.classList.add('noise-overlay');
+  </script>
+</body>
+</html>
